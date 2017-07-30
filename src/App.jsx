@@ -16,6 +16,7 @@ function App() {
       {/* <Input label="Latitude" id="lat" prefix="lat" type="text" /> */}
       {/* <Input label="Longitude" id="lng" prefix="lng" type="text" /> */}
       <Geo />
+      <a href="https://github.com/cape-io/geo">GitHub Code Here</a>
     </div>
   )
 }

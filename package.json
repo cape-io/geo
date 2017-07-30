@@ -1,7 +1,8 @@
 {
   "name": "geo",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://geo.cape.io",
   "dependencies": {
     "dms-conversion": "^3.0.0",
     "geolib": "^2.0.22",
@@ -20,8 +21,10 @@
     "reselect": "^3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -29,6 +32,7 @@
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0"
+    "eslint-plugin-react": "^7.1.0",
+    "gh-pages": "^1.0.0"
   }
 }
