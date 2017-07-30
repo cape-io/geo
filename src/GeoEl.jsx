@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 // Simple example of input element.
 function Geo({ hasError, lat, lon }) {
-  if (hasError) return <p>Please enter valid Sexagesimal</p>
+  if (hasError) return <p>Please enter valid coordinates</p>
   // console.log(lat, lng)
   return (
     <div>
