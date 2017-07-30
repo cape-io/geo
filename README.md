@@ -1,7 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Geo Example
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+A simple example of a text field that can parse sexagesimal (DMS) strings into decimal.
+
+This is example was built using the following tools.
+
+- Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+- State management with [redux](http://redux.js.org)
+- Field state in Redux with [redux-field](https://github.com/cape-io/redux-field)
+- Connect React component to `redux-field` with [redux-field-connect](https://github.com/cape-io/redux-field-connect)
 
 ## Table of Contents
 
@@ -1760,7 +1766,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
