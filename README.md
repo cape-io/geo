@@ -8,10 +8,10 @@ This is example was built using the following tools.
 - State management with [redux](http://redux.js.org)
 - Field state in Redux with [redux-field](https://github.com/cape-io/redux-field)
 - Connect React component to `redux-field` with [redux-field-connect](https://github.com/cape-io/redux-field-connect)
+- Parsing the DMS string with [parse-dms](https://github.com/gmaclennan/parse-dms)
 
 ## Table of Contents
 
-- [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
@@ -100,33 +100,16 @@ This is example was built using the following tools.
   - [Moment.js locales are missing](#momentjs-locales-are-missing)
 - [Something Missing?](#something-missing)
 
-## Updating to New Releases
-
-Create React App is divided into two packages:
-
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
-
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
-
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
-
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
-
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
-
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
-
 ## Sending Feedback
 
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+We are always open to [your feedback](https://github.com/cape-io/geo/issues).
 
 ## Folder Structure
 
 After creation, your project should look like this:
 
 ```
-my-app/
+geo/
   README.md
   node_modules/
   package.json
@@ -135,11 +118,14 @@ my-app/
     favicon.ico
   src/
     App.css
-    App.js
+    App.js # main outside jsx html.
     App.test.js
+    Geo.js # Redux container that utilizes DMS parser.
+    GeoEl.js # React component that displays parser result.
     index.css
-    index.js
-    logo.svg
+    index.js # Init React & Redux.
+    InputEl.jsx # A simple input field wrapped with connectInput().
+    reducer.js # Reducer containing the redux-field reducer.
 ```
 
 For the project to build, **these files must exist with exact filenames**:
@@ -187,7 +173,7 @@ See the section about [deployment](#deployment) for more information.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note: this is a one-way operation to exit Create React App. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
@@ -446,10 +432,6 @@ export default App;
 This will make `moduleA.js` and all its unique dependencies as a separate chunk that only loads after the user clicks the 'Load' button.
 
 You can also use it with `async` / `await` syntax if you prefer it.
-
-### With React Router
-
-If you are using React Router check out [this tutorial](http://serverless-stack.com/chapters/code-splitting-in-create-react-app.html) on how to use code splitting with it. You can find the companion GitHub repository [here](https://github.com/AnomalyInnovations/serverless-stack-demo-client/tree/code-splitting-in-create-react-app).
 
 ## Adding a Stylesheet
 
